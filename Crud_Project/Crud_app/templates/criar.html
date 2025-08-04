@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar de Produtos</title>
+</head>
+<body>
+    <h1>Criar de Produto</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h2 for="nome">Nome</h2>
+        <input type="text" name="nome" id="nome" placeholder="Digite o nome do produto"><br>
+
+        <h2 for="price"></h2>
+        <input type="number" name="price" id="price" step="0.01" placeholder="Ex: 99.99"><br>
+
+        <h2 for="descricao"></h2>
+        <input type="text" name="descricao" id="descricao" placeholder="Descrição breve"><br>
+
+        <button type="submit"> Criar Produto </button>
+
+    </form>
+    <a href="{% url 'lista_produto' %}">Voltar para lista</a>
+    
+</body>
+</html>

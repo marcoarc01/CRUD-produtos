@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Lista de Produto</h1>
+    <div>
+        {% for produto in produtos %}
+            <li>
+                {{ produto.nome }} - R$ {{ produto.price }} - {{ produto.descricao }}
+                <a href="{% url 'excluir_produto' produto.id %}">Excluir</a>
+            </li>
+        {% empty %}
+            <li>Nenhum produto cadastrado.</li>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="{% url 'criar_produto' %}">criar produto</a>
+    </div>
+    
+</body>
+</html>
