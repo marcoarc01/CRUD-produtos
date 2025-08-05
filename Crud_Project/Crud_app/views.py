@@ -22,3 +22,14 @@ def excluir_produto(request, pk):
     return redirect(lista_produto)
 
         
+def atualizar_produto(request, pk):
+    produto = get_object_or_404(Produto, pk=pk)
+    
+    if request.method == 'POST':
+
+        nome = request.POST['nome']
+        price = request.POST['price']
+        descricao = request.POST['descricao']
+        Produto.objects.update(nome = nome, price = price, descricao=descricao)
+    
+    return render(request, 'atualizar.html')
