@@ -9,13 +9,13 @@
         {% csrf_token %}
 
         <h2 for="nome">Nome</h2>
-        <input type="text" name="nome" id="nome" placeholder="Nome"> {{produto.nome}} <br>
+        <input type="text" name="nome" id="nome" value="{{produto.nome}}"> <br>
 
         <h2 for="price"></h2>
-        <input type="number" name="price" id="price" step="0.01" placeholder="Preço"> {{produto.price}} <br>
+        <input type="number" name="price" id="price" step="0.01" value="{{ produto.price|floatformat:2 }}" required>
 
         <h2 for="descricao"></h2>
-        <input type="text" name="descricao" id="descricao" placeholder="Descrição"> {{produto.descricao}} <br>
+        <input type="text" name="descricao" id="descricao" value="{{produto.descricao}}"> <br>
 
         <button type="submit"> atualizar Produto </button>
 
